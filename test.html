@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+
+  <style>
+    /* .grid-container {
+      display: flex; 
+      flex-direction: column; 
+      height: 100vh;
+    }
+
+    .grid-item {
+      flex: 0 1 auto; 
+    }
+
+    .last-item {
+      flex: 1 1 auto; 
+      background: blue;
+    } */
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: repeat(auto-fit, minmax(auto, auto)) 1fr; /* Auto-sized rows with a minimum height of their content, and 1 fractional row */
+      grid-auto-flow: row;
+      height: 100vh;
+    }
+
+    .last-item {
+      background: blue;
+    }
+  </style>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo quibusdam voluptas
+        veritatis? Qui unde totam quas dicta, omnis officiis.
+      </div>
+      <div class="grid-item">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, impedit.
+      </div>
+      <div class="grid-item">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, dolore.
+      </div>
+      <div class="grid-item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, ipsa.
+      </div>
+      <div class="last-item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsam inventore labore
+        mollitia nesciunt rerum maxime rem officia quam ex?
+      </div>
+    </div>
+  </body>
+</html>

@@ -14,7 +14,7 @@ const renderedPeople = people
     }
 
     if (slideIndex === people.length - 1) {
-      position = 'last'
+      position = 'prev'
     }
 
     return `<article class="slide ${position}">
@@ -38,3 +38,43 @@ const renderedPeople = people
   .join('')
 
 sliderContainer.innerHTML = renderedPeople
+
+// const startSlider = type => {
+//   const active = document.querySelector('.active')
+//   const prev = document.querySelector('.prev')
+
+//   let next = active.nextElementSibling
+//   if (!next) {
+//     next = sliderContainer.firstElementChild
+//   }
+
+//   active.classList.remove(['active'])
+//   prev.classList.remove(['prev'])
+//   next.classList.remove(['next'])
+
+//   if (type === 'prev') {
+//     active.classList.add('next')
+//     prev.classList.add('active')
+//     next = prev.previousElementSibling
+
+//     if (!next) {
+//       next = container.lastElementChild
+//     }
+//     next.classList.remove(['next'])
+//     next.classList.add('last')
+//     return
+//   }
+
+//   // Add active class to the next slide
+//   next.classList.add(['active'])
+//   active.classList.add(['prev'])
+//   prev.classList.add('next')
+// }
+
+nextBtn.addEventListener('click', () => {
+  startSlider()
+})
+
+prevBtn.addEventListener('click', () => {
+  startSlider('prev')
+})
