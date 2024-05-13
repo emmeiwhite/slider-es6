@@ -1,9 +1,23 @@
 import people from './data.js'
 
+const sliderContainer = document.querySelector('.slider-container')
+const prevBtn = document.querySelector('.prev-btn')
+const nextBtn = document.querySelector('.next-btn')
+
 const renderedPeople = people
-  .map(person => {
+  .map((person, slideIndex) => {
     const { img, name, job, text } = person
-    return `<article class="slide">
+    let position = 'next'
+
+    if (slideIndex === 0) {
+      position = 'active'
+    }
+
+    if (slideIndex === people.length - 1) {
+      position = 'last'
+    }
+
+    return `<article class="slide ${position}">
           <img
             src=${img}
             alt=${name}
@@ -22,7 +36,5 @@ const renderedPeople = people
         </article>`
   })
   .join('')
-
-const sliderContainer = document.querySelector('.slider-container')
 
 sliderContainer.innerHTML = renderedPeople
